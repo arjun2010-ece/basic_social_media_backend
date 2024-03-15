@@ -1,5 +1,23 @@
 ## Basic social media app for learning expressjs backend
 
+## Plan an backend applications::
+
+I want an application that:
+
+- returns my username, followers and follows for linkedin, instagram and facebook (hardcoded).
+- Return active time and date when request is made.
+- Return value from URL as testing for API learners.
+
+
+## Create mind map on MIRO for above requirements:
+
+1. Login on miro.com with gmail
+2. Click on sidebar "+" icons i.e more apps icon and then drag "mindmaps" from there to left side sidebar for easy access.
+
+3. On right hand side sidebar, click on "mindmap" and drag it on the dashboard or UI on right side and it will be a polygon presented there.
+
+4. and then create requirement diagram for APIs.
+
 ## Technologies
 1.  Express.js
 
