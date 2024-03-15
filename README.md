@@ -101,3 +101,7 @@ Because dynamic route has "/api/v1" common with static routes so it assumes that
 ## Find Deployment error:
 -------------------------
 1. Clicking on "Overview" tab and click on "Open app" and it will open a page where error displays
+
+
+## Custom domain and SSL settings
+    In the settings tab, if you scroll down, then you can definately add custom domain and SSL certificates also there.
