@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
     res.status(200).json({param: req.params.token});
 });  `
 
-//static route
+#### static route
 `app.get("/api/v1/instagram", (req, res) => {
     const instaSocial = {
         username: "arjun2010", followers: 55,
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
   res.status(200).json({instaSocial});
 });`
 
-//static route
+#### static route
 `app.get("/api/v1/facebook", (req, res) => {
     const instaSocial = {
         username: "arjun2010fb", followers: 65,
