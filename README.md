@@ -29,4 +29,34 @@
 6.  Next step is push your code to heroku by:
     heroku git:remote -a bscosialmedia   // bscosialmedia is the name of the heroku app created
 
-7.    
+7.  Next step is to deploy finally:
+    git push heroku master, (considering local GIT branch is master)
+
+8. Next, visit "Overview" tab of the heroku app and then click on "Open app" to check if it is working fine.
+9. Most of the time, it should be enough, except the first time as first time it will cause error. We will debug error next.
+
+## Debug deployment error for first time
+1.    Visit "Settings" tab and Go to "Config Vars" section and select "Reveal config Vars" button, which is a place to verify   
+    ENVIRONMENT VARIABLES is good or not.
+  In our current app this is not needed.
+
+2.    In our index.js file our code for port should be:
+        const PORT = process.env.PORT || 3000;
+      If we simply put it as:
+        const PORT = 3000;
+      It will cause an error because the deployment serve will assign PORT based on availability and not the one we directly provide.
+
+ 3.`    In package.json, during development we had the start script as:
+    "start": "nodemon index.js" . 
+        But since nodemon is a dev dependency and it gets prunned or removed while doing deployment (git push heroku master)
+        so this script needs to be updated for it to work on production server as:
+        
+        "start": "node index.js".
+        
+        Update above and do git add, commit and finally :
+        git push heroku master,  to do deployment
+4.`    And Now again go to "Overview" tab and click on "open app" to see its working fine.
+
+## Find Deployment error:
+-------------------------
+1. Clicking on "Overview" tab and click on "Open app" and it will open a page where error displays
