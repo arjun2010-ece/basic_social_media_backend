@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 `
 
-# dynamic route
+#### dynamic route
 `app.get("/api/v1/:token", (req, res) => {
     res.status(200).json({param: req.params.token});
 });  `
