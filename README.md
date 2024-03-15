@@ -11,25 +11,25 @@ app.get("/", (req, res) => {
 `
 
 //dynamic route
-app.get("/api/v1/:token", (req, res) => {
+`app.get("/api/v1/:token", (req, res) => {
     res.status(200).json({param: req.params.token});
-});  
+});  `
 
 //static route
-app.get("/api/v1/instagram", (req, res) => {
+`app.get("/api/v1/instagram", (req, res) => {
     const instaSocial = {
         username: "arjun2010", followers: 55,
     }
   res.status(200).json({instaSocial});
-});
+});`
 
 //static route
-app.get("/api/v1/facebook", (req, res) => {
+`app.get("/api/v1/facebook", (req, res) => {
     const instaSocial = {
         username: "arjun2010fb", followers: 65,
     }
   res.status(200).json({instaSocial});
-});
+});`
 
 
 1. Since dynamic route even though in middle but is present above many static routes so it causes an issue of always returning value of dynamic route i.e
