@@ -4,9 +4,11 @@
 1.  Express.js
 
 ##  Common routing Bugs when dynamic route is placed above static route
+`
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+`
 
 //dynamic route
 app.get("/api/v1/:token", (req, res) => {
