@@ -23,32 +23,37 @@ I want an application that:
 1.  Express.js
 
 ##  Common routing Bugs when dynamic route is placed above static route
-`
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-`
+```
+  app.get("/", (req, res) => {
+    res.send("Hello World!");
+  });
+```
 
 #### dynamic route
-`app.get("/api/v1/:token", (req, res) => {
+```
+app.get("/api/v1/:token", (req, res) => {
     res.status(200).json({param: req.params.token});
-});  `
+});
+```
 
 #### static route
-`app.get("/api/v1/instagram", (req, res) => {
+```
+app.get("/api/v1/instagram", (req, res) => {
     const instaSocial = {
         username: "arjun2010", followers: 55,
     }
   res.status(200).json({instaSocial});
-});`
+});
+```
 
 #### static route
-`app.get("/api/v1/facebook", (req, res) => {
+```app.get("/api/v1/facebook", (req, res) => {
     const instaSocial = {
         username: "arjun2010fb", followers: 65,
     }
   res.status(200).json({instaSocial});
-});`
+});
+```
 
 
 1. Since dynamic route even though in middle but is present above many static routes so it causes an issue of always returning value of dynamic route i.e
@@ -140,10 +145,10 @@ https://www.npmjs.com/package/swagger-ui-express
 
 in index.js file, add these lines on top:
 
-`const swaggerUi = require('swagger-ui-express');`
-`const swaggerDocument = require('./swagger.json');`
+```const swaggerUi = require('swagger-ui-express');```
+```const swaggerDocument = require('./swagger.json');```
 
-`app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));`
+```app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));```
 
 1. We did not yet create swagger.json file. Majority of people do not create json file instead use YAML file, so in npm docs for "swagger-ui-express", scroll down to section: "Load swagger from yaml file" and check its usage.
 
@@ -151,11 +156,11 @@ in index.js file, add these lines on top:
     `npm install yaml`
 
 3. And copy all the related content such as:
-    `const fs = require("fs");`
-    `const YAML = require('yaml');`
+    ```const fs = require("fs");```
+    ```const YAML = require('yaml');```
 
-    `const file  = fs.readFileSync('./swagger.yaml', 'utf8');`
-    `const swaggerDocument = YAML.parse(file);`
+    ```const file  = fs.readFileSync('./swagger.yaml', 'utf8');```
+    ```const swaggerDocument = YAML.parse(file);```
 
     and replace swagger.json file line with above content.
 
@@ -168,11 +173,11 @@ in index.js file, add these lines on top:
 
 7. To include .yaml extension for nodemon to observe changes, we need to create a "nodemon.json" in root folder and inside an object put a key as "ext", where you could write down all extensions that you want nodemon to look for as:
 
-   `
+   ```
    {
     "ext": ".js, .json, .yaml, .jsx"
    }
-   `
+   ```
 
    And restart the server and it will keep track from now on.
 
