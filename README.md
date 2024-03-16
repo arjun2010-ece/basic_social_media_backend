@@ -47,7 +47,8 @@ app.get("/api/v1/instagram", (req, res) => {
 ```
 
 #### static route
-```app.get("/api/v1/facebook", (req, res) => {
+```
+app.get("/api/v1/facebook", (req, res) => {
     const instaSocial = {
         username: "arjun2010fb", followers: 65,
     }
