@@ -190,13 +190,13 @@ in index.js file, add these lines on top:
   `
 2.  From above URL. copy the hosting servers production or staging or wherever hosted URLs as:
 
-   `
+   ```
       servers:
         - url: http://localhost:3000/api/v1
           description: Localhost version of our app
         - url: https://localhost:3000/api/v1
           description: This is just a dummy version of API
-   `
+   ```
 
    This "url" section either comes from a senior developer or you chooose based on what URL part is common in majority of APIs as in our case all the APIs will have "http://localhost:3000/api/v1" and only after that anything else, a common pattern.
 
