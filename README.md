@@ -182,12 +182,12 @@ in index.js file, add these lines on top:
 
 1. In the URL, `https://swagger.io/docs/specification/basic-structure/`, 
     copy basic info section and paste it into .yaml file as:
-  `
+  ```
     info:
       title: Sample API
       description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
       version: 0.1.9
-  `
+  ```
 2.  From above URL. copy the hosting servers production or staging or wherever hosted URLs as:
 
    ```
@@ -205,7 +205,7 @@ in index.js file, add these lines on top:
 `https://swagger.io/docs/specification/authentication/`
 
 and we implement it by copying below code as:
-`
+```
     components:
       securitySchemes:
         BasicAuth:
@@ -214,7 +214,7 @@ and we implement it by copying below code as:
         BearerAuth:
           type: http
           scheme: bearer
-`
+```
   Although, we have other types also such as cookie authentication, OPENID, oauth2 etc, which we can copy code as needed but now.
 
   In the UI, a "Authorize" button will appear, and onclik it will open a modal and if you go to section: BearerAuth and 
@@ -225,7 +225,7 @@ and we implement it by copying below code as:
 
     "summary" only gives just basic return statement of response.
 
-    `
+    ```
       paths:
         /instagram:
           get:
@@ -233,13 +233,13 @@ and we implement it by copying below code as:
             responses:
               "200": # status code
                 description: returns an object
-    `
+    ```
 
    And this swagger UI will be fully functional.
 
 5.  Enhance response UI more with more attributes such as:
      "content type, content schema ype and properties" as:
-    `
+    ```
            responses:
             "200": # status code
               description: returns an object
@@ -254,10 +254,10 @@ and we implement it by copying below code as:
                         type: string
                       follows:
                         type: string
-    `
+    ```
 
 6.  For implementinjg similar routes "facebook" or "linkedin", simply copy paste the path and edit it.
-     `
+     ```
             paths:
               /instagram:
                 get:
@@ -270,7 +270,7 @@ and we implement it by copying below code as:
                   summary:  returns username, followers and follows
                   responses:
                       .......rest
-    `
+    ```
 
 7.  For implementing an URL parameter as in dynamic path.
     
@@ -279,7 +279,7 @@ and we implement it by copying below code as:
 
     Also in "content properties", you put "params" if it is what you are returning.
 
-    `
+    ```
       /{token}:
         get:
           summary:  returns whichever is there in parameters
@@ -299,4 +299,4 @@ and we implement it by copying below code as:
                     properties:
                       params:
                         type: string
-    `
+    ```
