@@ -146,10 +146,12 @@ https://www.npmjs.com/package/swagger-ui-express
 
 in index.js file, add these lines on top:
 
-```const swaggerUi = require('swagger-ui-express');```
-```const swaggerDocument = require('./swagger.json');```
+```
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
-```app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));```
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+```
 
 1. We did not yet create swagger.json file. Majority of people do not create json file instead use YAML file, so in npm docs for "swagger-ui-express", scroll down to section: "Load swagger from yaml file" and check its usage.
 
@@ -157,11 +159,13 @@ in index.js file, add these lines on top:
     `npm install yaml`
 
 3. And copy all the related content such as:
-    ```const fs = require("fs");```
-    ```const YAML = require('yaml');```
+    ```
+    const fs = require("fs");
+    const YAML = require('yaml');
 
-    ```const file  = fs.readFileSync('./swagger.yaml', 'utf8');```
-    ```const swaggerDocument = YAML.parse(file);```
+    const file  = fs.readFileSync('./swagger.yaml', 'utf8');
+    const swaggerDocument = YAML.parse(file);
+    ```
 
     and replace swagger.json file line with above content.
 
